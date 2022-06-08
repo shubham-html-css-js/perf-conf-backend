@@ -85,7 +85,7 @@ app.post("/submit", async (req, res) => {
       console.log(questionId);
       let answer=await db.collection("answers").findOne({questionId:questionId})
       console.log(answer)
-      if(userAnswer===answer?.answer){
+      if(userAnswer===answer.answer){
       await db.collection("teams").updateOne(
         {
           teamName: teamName,
